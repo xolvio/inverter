@@ -4,7 +4,7 @@ Inverter
 A super simple and tiny client-side IoC (Inversion of Control) container for Meteor. This package will help you write
 decoupled code which means reusable and testable.
 
-##IoC for code reuse
+##For Code Reuse
 You can reuse the same events in multiple templates. For example:
 
 ```javascript
@@ -18,7 +18,7 @@ Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
-##IoC for Testing
+##For Testing
 Consider the following snip:
 
 ```javascript
