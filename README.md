@@ -13,8 +13,8 @@ Inverter.register('common.events', {
   }
 });
 
-Template.myTemplate.events(Inverter.get('common.helpers'));
-Template.anotherTemplate.events(Inverter.get('common.helpers'));
+Template.myTemplate.events(Inverter.get('common.events'));
+Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
 The `register` method returns the object you registered so you can use it inline also like this:
