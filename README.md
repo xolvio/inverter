@@ -1,7 +1,6 @@
 Inverter
 ========
-
-Inverter - A tiny client-side Inversion of Control (IoC) container for Meteor. This package will help you write
+A tiny client-side Inversion of Control (IoC) container for Meteor. This package will help you write
 decoupled code which means reusable and testable.
 
 ##For Code Reuse
