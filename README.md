@@ -14,7 +14,16 @@ Inverter.register('common.events', {
   }
 });
 
+Inverter.register('common.helpers', {
+  buttonName : function () {
+    return 'buttonzes'
+  }
+});
+
+Template.myTemplate.helpers(Inverter.get('common.helpers'));
 Template.myTemplate.events(Inverter.get('common.events'));
+
+Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
@@ -34,8 +43,8 @@ test. This is where Inverter comes in. The same code above can be written like t
 
 ```javascript
 Template.myTemplate.events(Inverter.register('myTemplate.events', {
-  'click button': function () {
-    // do something
+  'click button': function (e) {
+    $('#log').html('Clicked: ' + e.target.nodeName );
   }
 }));
 ```
@@ -46,10 +55,17 @@ And now in your test, you can access the events like this:
 describe('MyTemplate events', function() {
   it('should do something when the button is clicked', function() {
     
+    // SETUP
+    $('#log').html('');
+    
+    // EXCECUTE
     var clickButtonEvent = Inverter.get('myTemplate.events')['click button'];
-    clickButtonEvent();
+    var event = { target : { nodeName: 'hello' } };
+    clickButtonEvent(event);
   
-    // verify the result
+    // VERIFY
+    var logText = $('#log').text();
+    expect(logText).toBe('Clicked: BUTTON');
   });
 });
 
