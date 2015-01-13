@@ -9,22 +9,26 @@ You can reuse the same events in multiple templates. For example:
 
 ```javascript
 Inverter.register('common.events', {
-  'click button': function () {
-    // do something
+  'click button': function (e) {
+    $('#log').html('Clicked: ' + e.target.nodeName);
   }
 });
 
-Inverter.register('common.helpers', {
+Template.myTemplate.events(Inverter.get('common.helpers'));
+Template.anotherTemplate.events(Inverter.get('common.helpers'));
+```
+
+The `register` method returns the object you registered so you can use it inline also like this:
+
+```javascript
+Template.myTemplate.helpers(Inverter.register('common.helpers', {
   buttonName : function () {
-    return 'buttonzes'
+    return 'buttonz'
   }
-});
+}));
 
-Template.myTemplate.helpers(Inverter.get('common.helpers'));
-Template.myTemplate.events(Inverter.get('common.events'));
-
+// reuse common helpers in another template
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
-Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
 ##For Testing
@@ -44,7 +48,7 @@ test. This is where Inverter comes in. The same code above can be written like t
 ```javascript
 Template.myTemplate.events(Inverter.register('myTemplate.events', {
   'click button': function (e) {
-    $('#log').html('Clicked: ' + e.target.nodeName );
+    $('#log').html('Clicked: ' + e.target.nodeName);
   }
 }));
 ```
