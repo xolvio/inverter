@@ -43,5 +43,14 @@ Template.myTemplate.events(Inverter.register('myTemplate.events', {
 And now in your test, you can access the events like this:
 
 ```javascript
-var clickButtonEvent = Inverter.get('myTemplate.events')['click button'];
+describe('MyTemplate events', function() {
+  it('should do something when the button is clicked', function() {
+    
+    var clickButtonEvent = Inverter.get('myTemplate.events')['click button'];
+    clickButtonEvent();
+  
+    // verify the result
+  });
+});
+
 ```
