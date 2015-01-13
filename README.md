@@ -31,18 +31,8 @@ Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 ```
 
 ##For Testing
-Consider the following snip:
-
-```javascript
-Template.myTemplate.events({
-  'click button': function () {
-    // do something
-  }
-});
-```
-
 When you write a test, it's difficult to grab the 'click button' event from a unit or integration
-test. This is where Inverter comes in. The same code above can be written like this:
+test. This is where Inverter comes in. You isolate events like this:
 
 ```javascript
 Template.myTemplate.events(Inverter.register('myTemplate.events', {
@@ -73,3 +63,7 @@ describe('MyTemplate events', function() {
 });
 
 ```
+
+These are some uses of Inverter. There can be many more cases where you need a pattern for reuse or isolation.
+
+All feedback welcome!
