@@ -1,9 +1,9 @@
 Inverter
 ========
 A tiny client-side Inversion of Control (IoC) container for Meteor. This package will help you write
-decoupled code which means reusable and testable.
+decoupled code which means reusable and testable code.
 
-##For Code Reuse
+##For Reuse
 You can reuse the same events in multiple templates. For example:
 
 ```javascript
