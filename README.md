@@ -5,7 +5,7 @@ A super simple and tiny client-side IoC container for Meteor. This package will 
 decoupled code which means reusable and testable.
 
 ##IoC for code reuse
-You can reuse the same events in multiple templates. You can do this:
+You can reuse the same events in multiple templates. For example:
 
 ```javascript
 Inverter.register('common.events', {
