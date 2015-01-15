@@ -7,7 +7,7 @@ decoupled code which means reusable and testable code.
 
 `meteor add xolvio:inverter`
 
-##For Reuse
+##Use Inverter for Code Reuse
 You can reuse the same events in multiple templates. For example:
 
 ```javascript
@@ -34,7 +34,7 @@ Template.myTemplate.helpers(Inverter.register('common.helpers', {
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 ```
 
-##For Testing
+##Use Inverter for Testing
 When you write a test, it's difficult to grab the 'click button' event from a unit or integration
 test. This is where Inverter comes in. You isolate events like this:
 
