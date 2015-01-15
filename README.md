@@ -3,6 +3,10 @@ Inverter
 A tiny client-side Inversion of Control (IoC) container for Meteor. This package will help you write
 decoupled code which means reusable and testable code.
 
+##Installation
+
+`meteor add xolvio:inverter`
+
 ##For Reuse
 You can reuse the same events in multiple templates. For example:
 
