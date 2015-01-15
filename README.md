@@ -21,7 +21,7 @@ Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
-The `register` method returns the object you registered so you can use it inline also like this:
+The `register` method returns the object you registered so you can use it inline like this:
 
 ```javascript
 Template.myTemplate.helpers(Inverter.register('common.helpers', {
@@ -32,6 +32,19 @@ Template.myTemplate.helpers(Inverter.register('common.helpers', {
 
 // reuse common helpers in another template
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
+```
+
+You can also pass in a context to use in the common code using the `getWith` call:
+
+```javascript
+Inverter.register('common.events', {
+  'click button': function (e) {
+    $('#log').html('Clicked: ' + this.logVar);
+  }
+});
+
+Template.myTemplate.events(Inverter.getWith('common.events', {'logVar': 'log1'}));
+Template.anotherTemplate.events(Inverter.getWith('common.events', {'logVar': 'log2'}));
 ```
 
 ##Use Inverter for Testing
