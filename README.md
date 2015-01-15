@@ -24,7 +24,7 @@ Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
-###`get` inline
+###`get` (inline)
 
 The `register` method returns the object you registered so you can use it inline like this:
 
