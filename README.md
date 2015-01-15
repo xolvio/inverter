@@ -9,7 +9,7 @@ decoupled code which means reusable and testable code.
 
 ##Use Inverter for Code Reuse
 
-###`get`
+###Using `register` and `get`
 
 You can reuse the same events in multiple templates. For example:
 
@@ -24,7 +24,7 @@ Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
-###`get` (inline)
+###Inline `get`
 
 The `register` method returns the object you registered so you can use it inline like this:
 
@@ -39,7 +39,7 @@ Template.myTemplate.helpers(Inverter.register('common.helpers', {
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 ```
 
-###`getWith`
+###Passing a context using `getWith`
 
 You can also pass in a context to use in the common code using the `getWith` call:
 
