@@ -8,6 +8,9 @@ decoupled code which means reusable and testable code.
 `meteor add xolvio:inverter`
 
 ##Use Inverter for Code Reuse
+
+###`get`
+
 You can reuse the same events in multiple templates. For example:
 
 ```javascript
@@ -21,6 +24,8 @@ Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
 
+###`get` inline
+
 The `register` method returns the object you registered so you can use it inline like this:
 
 ```javascript
@@ -33,6 +38,8 @@ Template.myTemplate.helpers(Inverter.register('common.helpers', {
 // reuse common helpers in another template
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 ```
+
+###`getWith`
 
 You can also pass in a context to use in the common code using the `getWith` call:
 
