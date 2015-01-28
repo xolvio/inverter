@@ -1,3 +1,7 @@
+#0.4.0
+
+* Exposed the Container constructor to allow multiple containers
+
 #0.3.0
 
 * Inverter now works on the server also

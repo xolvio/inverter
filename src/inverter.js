@@ -68,3 +68,4 @@ var HashCode = function () {
 }();
 
 Inverter = new Container();
+Inverter.Container = Container;

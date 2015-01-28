@@ -90,6 +90,33 @@ describe('MyTemplate events', function() {
 
 ```
 
+##Use Your Namespace
+
+```javascript
+MyApp.container = Inverter;
+
+var clickButtonEvent = MyApp.container.get(...);
+```
+
+
+##Multiple Containers
+You may want to do this
+
+```javascript
+MyApp.developmentContainer = new Inverter.Container();
+MyApp.productionContainer = new Inverter.Container();
+
+// Now you can set the main app container to be dependant on an environment variable
+
+var env = process.env.NODE_ENV;
+MyApp.container = MyApp[env + 'Container'];
+
+```
+
+This allows you have a different configuration for a different environments.
+
+##That's it
+
 These are some uses of Inverter. There can be many more cases where you need a pattern for reuse or isolation.
 
 All feedback welcome!
