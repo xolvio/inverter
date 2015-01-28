@@ -1,6 +1,6 @@
 Inverter
 ========
-A tiny client-side Inversion of Control (IoC) container for Meteor. This package will help you write
+A tiny Inversion of Control (IoC) container for Meteor. This package will help you write
 decoupled code which means reusable and testable code.
 
 ##Installation
@@ -9,7 +9,7 @@ decoupled code which means reusable and testable code.
 
 ##Use Inverter for Code Reuse
 
-###Using `register` and `get`
+###Using `register`/`set` and `get`
 
 You can reuse the same events in multiple templates. For example:
 
@@ -23,6 +23,8 @@ Inverter.register('common.events', {
 Template.myTemplate.events(Inverter.get('common.events'));
 Template.anotherTemplate.events(Inverter.get('common.events'));
 ```
+
+Note that `set` is an alias for `register`.
 
 ###Inline `get`
 
