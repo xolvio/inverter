@@ -2,6 +2,7 @@ Package.describe({
   name: 'xolvio:inverter',
   summary: 'A mini Inversion of Control (IoC) container for Meteor.',
   version: '0.4.0',
+  documentation: '../README.md',
   git: 'https://github.com/xolvio/inverter.git'
 });
 

@@ -3,20 +3,20 @@ Inverter
 A tiny Inversion of Control (IoC) container for Meteor. This package will help you write
 decoupled code which means reusable and testable code.
 
-#Get the Book
+# Get the Book
 To learn more about testing with Meteor, consider purchasing our book [The Meteor Testing Manual](http://www.meteortesting.com/?utm_source=inverter&utm_medium=banner&utm_campaign=inverter).
 
 [![](http://www.meteortesting.com/img/tmtm.gif)](http://www.meteortesting.com/?utm_source=inverter&utm_medium=banner&utm_campaign=inverter)
 
 Your support helps us continue our work on Velocity and related frameworks.
 
-##Installation
+## Installation
 
 `meteor add xolvio:inverter`
 
-##Use Inverter for Code Reuse
+## Use Inverter for Code Reuse
 
-###Using `register`/`set` and `get`
+### Using `register`/`set` and `get`
 
 You can reuse the same events in multiple templates. For example:
 
@@ -33,7 +33,7 @@ Template.anotherTemplate.events(Inverter.get('common.events'));
 
 Note that `set` is an alias for `register`.
 
-###Inline `get`
+### Inline `get`
 
 The `register` method returns the object you registered so you can use it inline like this:
 
@@ -48,7 +48,7 @@ Template.myTemplate.helpers(Inverter.register('common.helpers', {
 Template.anotherTemplate.helpers(Inverter.get('common.helpers'));
 ```
 
-###Passing a context using `getWith`
+### Passing a context using `getWith`
 
 You can also pass in a context to use in the common code using the `getWith` call:
 
@@ -63,7 +63,7 @@ Template.myTemplate.events(Inverter.getWith('common.events', {'logVar': 'log1'})
 Template.anotherTemplate.events(Inverter.getWith('common.events', {'logVar': 'log2'}));
 ```
 
-##Use Inverter for Testing
+## Use Inverter for Testing
 When you write a test, it's difficult to grab the 'click button' event from a unit or integration
 test. This is where Inverter comes in. You isolate events like this:
 
@@ -97,7 +97,7 @@ describe('MyTemplate events', function() {
 
 ```
 
-##Use Your Namespace
+## Use Your Namespace
 
 ```javascript
 MyApp.container = Inverter;
@@ -106,7 +106,7 @@ var clickButtonEvent = MyApp.container.get(...);
 ```
 
 
-##Multiple Containers
+## Multiple Containers
 You may want to do this
 
 ```javascript
@@ -122,7 +122,7 @@ MyApp.container = MyApp[env + 'Container'];
 
 This allows you have a different configuration for a different environments.
 
-##That's it
+## That's it
 
 These are some uses of Inverter. There can be many more cases where you need a pattern for reuse or isolation.
 
